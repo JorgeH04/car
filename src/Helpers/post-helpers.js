@@ -1,6 +1,6 @@
 import Axios from 'axios';
 export async function toggleLike(post) {
-  const url = `http://localhost:3000/api/posts/${post._id}/likes`;
+  const url = `https://backupload.herokuapp.com/api/posts/${post._id}/likes`;
   let postConLikeActualizado;
   if (post.estaLike) {
     await Axios.delete(url, {});
@@ -21,7 +21,7 @@ export async function toggleLike(post) {
 }
 export async function comentar(post, mensaje, usuario) {
   const { data: nuevoComentario } = await Axios.post(
-    `http://localhost:3000/api/posts/${post._id}/comentarios`,
+    `https://backupload.herokuapp.com/api/posts/${post._id}/comentarios`,
     { mensaje }
   );
   nuevoComentario.usuario = usuario;

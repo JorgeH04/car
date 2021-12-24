@@ -8,7 +8,7 @@ import Post from '../Componentes/Post';
 
 async function cargarPosts(fechaDelUltimoPost) {
   const query = fechaDelUltimoPost ? `?fecha=${fechaDelUltimoPost}` : '';
-  const { data: nuevosPosts } = await Axios.get(`http://localhost:3000/api/posts/feed${query}`);
+  const { data: nuevosPosts } = await Axios.get(`https://backupload.herokuapp.com/api/posts/feed${query}`);
   return nuevosPosts;
 }
 

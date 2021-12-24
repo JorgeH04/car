@@ -20,7 +20,7 @@ export default function PostVista({ mostrarError, match, usuario }) {
   useEffect(() => {
     async function cargarPost() {
       try {
-        const { data: post } = await Axios.get(`http://localhost:3000/api/posts/${postId}`);
+        const { data: post } = await Axios.get(`https://backupload.herokuapp.com/api/posts/${postId}`);
         setPost(post);
         setLoading(false);
       } catch (error) {

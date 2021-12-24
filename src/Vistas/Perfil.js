@@ -24,9 +24,9 @@ export default function Perfil({ mostrarError, usuario, match, logout }) {
     async function cargarPostsYUsuario() {
       try {
         setCargandoPefil(true);
-        const { data: usuario } = await Axios.get(`http://localhost:3000/api/usuarios/${username}`);
+        const { data: usuario } = await Axios.get(`https://backupload.herokuapp.com/api/usuarios/${username}`);
         const { data: posts } = await Axios.get(
-          `http://localhost:3000/api/posts/usuario/${usuario._id}`
+          `https://backupload.herokuapp.com/api/posts/usuario/${usuario._id}`
         );
         setUsuarioDueñoDelPerfil(usuario);
         setPosts(posts);

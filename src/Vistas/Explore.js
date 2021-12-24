@@ -17,8 +17,8 @@ export default function Explore({ mostrarError}) {
     async function cargarPostsYUsuarios() {
       try {
         const [posts, usuarios] = await Promise.all([
-          Axios.get('http://localhost:3000/api/posts/explore').then(({ data }) => data),
-          Axios.get('http://localhost:3000/api/usuarios/explore').then(({ data }) => data)
+          Axios.get('https://backupload.herokuapp.com/api/posts/explore').then(({ data }) => data),
+          Axios.get('https://backupload.herokuapp.com/api/usuarios/explore').then(({ data }) => data)
         ]);
         setPosts(posts);
         setUsuarios(usuarios);

@@ -19,7 +19,7 @@ export default function Upload({ history, mostrarError }) {
           'Content-Type': file.type
         }
       };
-      const { data } = await Axios.post('http://localhost:3000/api/posts/upload', file, config);
+      const { data } = await Axios.post('https://backupload.herokuapp.com/api/posts/upload', file, config);
       setImagenUrl(data.url);
       setSubiendoImagen(false);
     } catch (error) {
@@ -47,7 +47,7 @@ export default function Upload({ history, mostrarError }) {
         caption,
         url: imagenUrl
       };
-      await Axios.post('http://localhost:3000/api/posts', body);
+      await Axios.post('https://backupload.herokuapp.com/api/posts', body);
       setEnviandoPost(false);
       history.push('/');
     } catch (error) {

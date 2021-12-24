@@ -39,7 +39,7 @@ export default function App() {
         return;
       }
       try {
-        const { data: usuario } = await Axios.get('http://localhost:3000/api/usuarios/whoami');
+        const { data: usuario } = await Axios.get('https://backupload.herokuapp.com/api/usuarios/whoami');
         setUsuario(usuario);
         setCargandoUsuario(false);
       } catch (error) {
@@ -49,7 +49,7 @@ export default function App() {
     cargarUsuario();
   }, []);
   async function login(email, password) {
-    const { data } = await Axios.post('http://localhost:3000/api/usuarios/login', {
+    const { data } = await Axios.post('https://backupload.herokuapp.com/api/usuarios/login', {
       email,
       password
     });
@@ -57,7 +57,7 @@ export default function App() {
     setToken(data.token);
   }
   async function signup(usuario) {
-    const { data } = await Axios.post('http://localhost:3000/api/usuarios/signup', usuario);
+    const { data } = await Axios.post('https://backupload.herokuapp.com/api/usuarios/signup', usuario);
     setUsuario(data.usuario);
     setToken(data.token);
   }
